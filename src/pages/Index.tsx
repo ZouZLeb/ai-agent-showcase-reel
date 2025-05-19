@@ -1,12 +1,59 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useEffect } from "react";
+import HeroSection from "@/components/HeroSection";
+import AgentSection from "@/components/AgentSection";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import agentsData from "@/data/agents.json";
 
 const Index = () => {
+  // Add some animations when the page loads
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in');
+          entry.target.classList.remove('opacity-0');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+      section.classList.add('opacity-0');
+      observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-gray-50">
+      <HeroSection 
+        title={agentsData.hero.title} 
+        subtitle={agentsData.hero.subtitle} 
+        cta={agentsData.hero.cta} 
+      />
+
+      <div id="agents-section">
+        <Navigation 
+          agents={agentsData.agents.map(agent => ({ id: agent.id, name: agent.name }))} 
+        />
+        
+        {agentsData.agents.map((agent) => (
+          <AgentSection
+            key={agent.id}
+            id={agent.id}
+            name={agent.name}
+            image={agent.image}
+            description={agent.description}
+            capabilities={agent.capabilities}
+            videos={agent.videos}
+          />
+        ))}
       </div>
+
+      <Footer />
     </div>
   );
 };
