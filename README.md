@@ -1,4 +1,28 @@
-# Welcome to your Lovable project
+
+# AI Agents Demo
+
+This is an interactive showcase of cutting-edge AI agents and their capabilities through visual demonstrations. The site features a dark, futuristic design with neon accents, creating an immersive experience for visitors exploring AI technology.
+
+## Features
+
+- **Immersive Hero Section** - Eye-catching full-width hero with animated neon effects and a clear call-to-action
+- **Multiple Agent Showcases** - Each AI agent has a dedicated section with profile information and capabilities
+- **Video Demonstrations** - Each agent includes multiple video demos showing their capabilities in action
+- **Responsive Navigation** - Smooth scrolling navigation with active section highlighting
+- **Modern Dark UI** - Sleek dark theme with neon accents and subtle animations
+
+## AI Agents Featured
+
+- **SmartBot** - A versatile AI assistant for complex conversations and tasks
+- **DataGenie** - Specialized in data analysis and visualization
+- **VisionPro** - Advanced computer vision for image and video analysis
+
+## Technology
+
+- Built with React, TypeScript, and Vite
+- Styled with Tailwind CSS and custom animations
+- Responsive design that works across all devices
+- Interactive UI elements with smooth transitions
 
 ## Project info
 
@@ -49,16 +73,6 @@ npm run dev
 - Select the "Codespaces" tab.
 - Click on "New codespace" to launch a new Codespace environment.
 - Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
 
 ## How can I deploy this project?
 
